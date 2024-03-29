@@ -16,12 +16,12 @@ export class UserController {
     return 'Hello User';
   }
 
-  @Post('create')
+  @Post()
   async createUser(@Body() createUser: CreateUserDto): Promise<UserEntity> {
     return this.createUserService.execute(createUser);
   }
 
-  @Get('find-all')
+  @Get()
   async listUser(): Promise<UserEntity[]> {
     return this.findAllUsersService.execute();
   }
