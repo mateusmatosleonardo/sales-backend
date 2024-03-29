@@ -12,6 +12,9 @@ export class CreateUserUseCase {
   ) {}
 
   async execute(createUser: CreateUserDto): Promise<UserEntity> {
-    return this.userRepository.save(createUser);
+    return this.userRepository.save({
+      typeUser: 1,
+      ...createUser,
+    });
   }
 }
